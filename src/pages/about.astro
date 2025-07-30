@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css"
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 const pageTitle = "About Me";
 const identity = {
   firstName: "Sarah",
@@ -37,34 +39,33 @@ const textCase = "uppercase";
         </style>
 	</head>
 	<body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/"> Blog</a>
+        <Navigation/>
 
-    <h1>This could be about this Astro site</h1>
-    <h1>Or it could be About Me i.e. {pageTitle}</h1>
-    <h2>Or I suppose both</h2>
+        <h1>This could be about this Astro site</h1>
+        <h1>Or it could be About Me i.e. {pageTitle}</h1>
+        <h2>Or I suppose both</h2>
 
-    <p>Well I don't have much to say I guess</p>
+        <p>Well I don't have much to say I guess</p>
 
-    <p>So make up your own story</p>
+        <p>So make up your own story</p>
 
-    <p>Here are a few facts about me:</p>
-        <ul>
-          <li>My name is {identity.firstName}.</li>
-          <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-          {identity.hobbies.length >= 2 &&
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-          }
-        </ul>
-    <p>My skills are:</p>
-        <ul>
-          {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
-    {happy && <p>I am happy to be learning Astro!</p>}
+        <p>Here are a few facts about me:</p>
+            <ul>
+              <li>My name is {identity.firstName}.</li>
+              <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+              {identity.hobbies.length >= 2 &&
+                <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+              }
+            </ul>
+        <p>My skills are:</p>
+            <ul>
+              {skills.map((skill) => <li class="skill">{skill}</li>)}
+            </ul>
+        {happy && <p>I am happy to be learning Astro!</p>}
 
-    {finished && <p>I finished this tutorial!</p>}
+        {finished && <p>I finished this tutorial!</p>}
 
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+        <Footer />
     </body>
 </html>
